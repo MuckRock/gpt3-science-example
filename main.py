@@ -61,12 +61,12 @@ class GPTPlay(AddOn):
             writer = csv.writer(file_)
             writer.writerow(["document_title", "url", "output"])
             prompt = "Rewrite the following abstract to avoid heavy scientific jargon and use simpler vocabulary: "
-            gpt_model = self.data.get("model", "text-davinci-003")
+            gpt_model = "text-davinci-003"
             for document in self.get_documents():
                 self.set_message(f"Analyzing document {document.title}.")
                 try:
-                    # Just starting with page one for now due to API limits.
-                    full_text = document.full_text.translate(ESCAPE_TABLE)[:12000] # Limiting to first 10000 characters from entire document
+                    # Limiting to first 12000 characters from entire document
+                    full_text = document.full_text.translate(ESCAPE_TABLE)[:12000] 
                     submission = (
                         f"{prompt}\n\n"
                         f"Document Text:\n=========\n{full_text}\n\n\n"
@@ -83,12 +83,6 @@ class GPTPlay(AddOn):
                     )
                     results = response.choices[0].text
                     writer.writerow([document.title, document.canonical_url, results])
- #                   if self.data.get("value"): # Values don't make sense in this application.
- #                       try:  # should add a proper permission check here.
- #                           #document.data[self.data["value"]] = [str(results)]
- #                           document.save()
- #                       except:
- #                           print("Saving the value did not work")
                 except:
                     print("Error, moving on to the next item.")
 
