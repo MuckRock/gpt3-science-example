@@ -1,5 +1,5 @@
 # The title is the title of your Add-On
-title: GPT-3 Rewriting Scientific Abstract Example
+title: Diakopoulos GPT-3 Example: Rewriting Scientific Abstract Example
 # The description will be shown above the form when activating the Add-On
 description: >-
   An implementation of the example [de-jargonizing GPT-3 application described by Nick Diakopoulos](https://colab.research.google.com/drive/1rr0dxKpwK5zjch1V4eKjwwyVW-AzuDTw#scrollTo=zI4zN4RMg8yq). Use with care as it may introduce factual errors, hallucinations, and other artifacts in summaries.
