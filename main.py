@@ -39,7 +39,7 @@ class GPTPlay(AddOn):
             return False
         else:
             # charging one credit per 450 documents, rounded up
-            ai_credits = self.get_document_count() * CREDITS_PER_DOCUMENT)
+            ai_credits = self.get_document_count() * CREDITS_PER_DOCUMENT
             resp = self.client.post(
                 f"organizations/{self.org_id}/ai_credits/",
                 json={"ai_credits": ai_credits},
